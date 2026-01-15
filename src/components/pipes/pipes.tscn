@@ -1,0 +1,128 @@
+[gd_scene load_steps=12 format=3 uid="uid://d33ktgpenp5s3"]
+
+[ext_resource type="LabelSettings" uid="uid://xms7g6t7d5w7" path="res://styles/label_body_20px.tres" id="1_g0sjp"]
+[ext_resource type="Script" uid="uid://cxytglwymc1uc" path="res://src/components/pipes/Pipes.gd" id="1_lm3w5"]
+[ext_resource type="PackedScene" uid="uid://crmsm7b80438t" path="res://src/components/pipes/display/inventory_display.tscn" id="3_g0sjp"]
+[ext_resource type="Script" uid="uid://dkx58i054j713" path="res://src/components/pipes/display/PipeDisplay.gd" id="4_l5ro1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g0sjp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0sjp"]
+bg_color = Color(0.1254902, 0.1254902, 0.105882354, 1)
+border_width_left = 3
+border_color = Color(0, 0, 0, 0.8666667)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l5ro1"]
+bg_color = Color(0.8901961, 0.81960785, 0.23921569, 1)
+border_width_left = 3
+border_color = Color(0.627451, 0.57254905, 0.12941177, 1)
+border_blend = true
+expand_margin_left = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1ebe"]
+bg_color = Color(0.1254902, 0.1254902, 0.105882354, 1)
+border_width_left = 3
+border_width_right = 3
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2l08k"]
+bg_color = Color(0.8901961, 0.81960785, 0.23921569, 1)
+border_width_left = 3
+border_width_right = 3
+border_color = Color(0.627451, 0.57254905, 0.12941177, 1)
+border_blend = true
+expand_margin_left = 3.0
+expand_margin_right = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m5xx0"]
+bg_color = Color(0.1254902, 0.1254902, 0.105882354, 1)
+border_width_right = 3
+border_color = Color(0, 0, 0, 0.8666667)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cuwl8"]
+bg_color = Color(0.8901961, 0.81960785, 0.23921569, 1)
+border_width_right = 3
+border_color = Color(0.627451, 0.57254905, 0.12941177, 1)
+border_blend = true
+expand_margin_right = 3.0
+
+[node name="Pipes" type="VBoxContainer"]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Item Pipes"
+label_settings = ExtResource("1_g0sjp")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." node_paths=PackedStringArray("_inventoryDisplayA", "_inventoryDisplayB", "_pipeDisplay")]
+layout_mode = 2
+theme_override_constants/separation = 0
+script = ExtResource("1_lm3w5")
+_inventoryDisplayA = NodePath("InventoryDisplay")
+_inventoryDisplayB = NodePath("InventoryDisplay2")
+_pipeDisplay = NodePath("PipeDisplay")
+
+[node name="InventoryDisplay" parent="HBoxContainer" instance=ExtResource("3_g0sjp")]
+layout_mode = 2
+
+[node name="PipeDisplay" type="PanelContainer" parent="HBoxContainer" node_paths=PackedStringArray("_leftInputDisplay", "_rightInputDisplay", "_ltrButton")]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_g0sjp")
+script = ExtResource("4_l5ro1")
+_leftInputDisplay = NodePath("HBoxContainer/PipeInput")
+_rightInputDisplay = NodePath("HBoxContainer/PipeInput2")
+_ltrButton = NodePath("Button")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PipeDisplay"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="PipeInput" type="PanelContainer" parent="HBoxContainer/PipeDisplay/HBoxContainer"]
+custom_minimum_size = Vector2(14, 50)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_g0sjp")
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/PipeDisplay/HBoxContainer/PipeInput"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_l5ro1")
+
+[node name="PipeSegment" type="PanelContainer" parent="HBoxContainer/PipeDisplay/HBoxContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_b1ebe")
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/PipeDisplay/HBoxContainer/PipeSegment"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_2l08k")
+
+[node name="PipeInput2" type="PanelContainer" parent="HBoxContainer/PipeDisplay/HBoxContainer"]
+custom_minimum_size = Vector2(14, 50)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_m5xx0")
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/PipeDisplay/HBoxContainer/PipeInput2"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_cuwl8")
+
+[node name="Button" type="Button" parent="HBoxContainer/PipeDisplay"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 30
+text = ">"
+
+[node name="InventoryDisplay2" parent="HBoxContainer" instance=ExtResource("3_g0sjp")]
+layout_mode = 2

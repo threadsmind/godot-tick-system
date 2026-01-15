@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://crmsm7b80438t"]
+
+[ext_resource type="Script" uid="uid://coc12pws57g20" path="res://src/components/pipes/display/InventoryDisplay.gd" id="1_y8c0d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0sjp"]
+bg_color = Color(0.8156863, 0.52156866, 0.101960786, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.25882354, 0.2, 0.13725491, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l5ro1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_bottom = 8
+border_color = Color(0.25882354, 0.2, 0.13725491, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1ebe"]
+bg_color = Color(0.77254903, 0.77254903, 0.7647059, 1)
+shadow_color = Color(0.33333334, 0.20784314, 0.015686275, 0.24313726)
+shadow_size = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_rueen"]
+font_size = 24
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.14901961)
+shadow_offset = Vector2(0, 0)
+
+[node name="InventoryDisplay" type="PanelContainer" node_paths=PackedStringArray("_itemCountLabel")]
+custom_minimum_size = Vector2(100, 100)
+theme_override_styles/panel = SubResource("StyleBoxFlat_g0sjp")
+script = ExtResource("1_y8c0d")
+_itemCountLabel = NodePath("ItemCount")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_l5ro1")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="PanelContainer2" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(16, 30)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b1ebe")
+
+[node name="ItemCount" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_rueen")
+horizontal_alignment = 1
+vertical_alignment = 2
