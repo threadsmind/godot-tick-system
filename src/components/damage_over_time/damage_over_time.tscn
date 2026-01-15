@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://bprlj3wtwutey"]
+
+[ext_resource type="LabelSettings" uid="uid://xms7g6t7d5w7" path="res://styles/label_body_20px.tres" id="1_cpa1w"]
+[ext_resource type="Script" uid="uid://diq3rx0wljf6s" path="res://src/components/damage_over_time/DamageOverTime.gd" id="1_opgm0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cpa1w"]
+bg_color = Color(0.65882355, 0.13333334, 0.13333334, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.61953086, 0.118279465, 0.122227915, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opgm0"]
+bg_color = Color(0.2633049, 0.5091102, 0.2732039, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.28953874, 0.5578155, 0.3010592, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="DamageOverTime" type="VBoxContainer" node_paths=PackedStringArray("_progressBar", "_messageLabel")]
+script = ExtResource("1_opgm0")
+_progressBar = NodePath("ProgressBar")
+_messageLabel = NodePath("Message")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Damage Over Time"
+label_settings = ExtResource("1_cpa1w")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/background = SubResource("StyleBoxFlat_cpa1w")
+theme_override_styles/fill = SubResource("StyleBoxFlat_opgm0")
+max_value = 25.0
+value = 25.0
+
+[node name="Message" type="Label" parent="."]
+modulate = Color(1, 0.3764706, 0.30980393, 0)
+layout_mode = 2
+label_settings = ExtResource("1_cpa1w")
+horizontal_alignment = 1

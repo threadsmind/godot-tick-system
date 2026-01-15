@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cxr2g0j07sjhf"]
+[gd_scene load_steps=15 format=3 uid="uid://cxr2g0j07sjhf"]
 
 [ext_resource type="LabelSettings" uid="uid://18nq6dd76a44" path="res://styles/label_body_24px.tres" id="1_nido4"]
 [ext_resource type="Script" uid="uid://ojoqw0jyya53" path="res://src/TickSystemDemo.gd" id="1_r2bka"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cj6630ldr8yi7" path="res://src/components/tps_setter/tps_setter.tscn" id="9_qbp7n"]
 [ext_resource type="PackedScene" uid="uid://bxgq7wru8hn1r" path="res://src/components/tick_info/tick_info.tscn" id="10_2gbsl"]
 [ext_resource type="PackedScene" uid="uid://cumw5gnjg5pdv" path="res://src/components/incremental_progress/incremental_progress.tscn" id="12_5pu1q"]
+[ext_resource type="PackedScene" uid="uid://bprlj3wtwutey" path="res://src/components/damage_over_time/damage_over_time.tscn" id="13_qttwm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qecvg"]
 bg_color = Color(0.6793051, 0.6964356, 0.7312678, 1)
@@ -117,4 +118,10 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="IncrementalProgress" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox7" instance=ExtResource("12_5pu1q")]
+layout_mode = 2
+
+[node name="FlowBox8" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" instance=ExtResource("5_f80al")]
+layout_mode = 2
+
+[node name="DamageOverTime" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox8" instance=ExtResource("13_qttwm")]
 layout_mode = 2
