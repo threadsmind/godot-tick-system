@@ -1,20 +1,26 @@
-## A frame-independent game tick system based on Godot's physics processing loop.
+## A framerate-independent game tick system based on Godot's physics processing loop.
 ##
 ## [b]TickSystem[/b] is a wrapper for Godot's physics processing loop. It provides
-##	ways to control and access a frame-independent game tick loop separately from
+##	ways to control and access a framerate-independent game tick loop separately from
 ##	Godot's physics loop.
 ## [br][br]
-## [b]Example:[/b] Set the target TPS to a non-default value and create a method
-##	that will be called on each game tick:
+## [b]Example:[/b] Set the target TPS to a non-default value, connect a method
+##	that will be called on each game tick, then begin the tick loop:
 ## [codeblock]
 ## func _ready():
+##    TickSystem.targetTPS = 10  # [default 20]
 ##    TickSystem.ticked.connect(_on_tick)
-##    TickSystem.targetTPS = 10
 ##    TickSystem.Start()
 ##
 ## func _on_tick(_ticks):
 ##     print("Tick!")
 ## [/codeblock]
+## [br][br]
+## [b]Note:[/b] Ticks per second (TPS) for this system is limited to the range of
+##	[code]1[/code] to [code]Engine.physics_ticks_per_second[/code]. If your use
+##	case requires less frequent ticks (longer than 1 second), you can use a modulo
+##	operation on the tick accumulation value passed in the `ticked` signal where
+##	the modulus is greater than the system's current TPS.
 ## [br][br]
 ## [b]Note:[/b] While starting, stopping, or changing the TPS of the TickSystem does
 ##	not affect Godot's physics loop, changes to [member Engine.physics_ticks_per_second]
