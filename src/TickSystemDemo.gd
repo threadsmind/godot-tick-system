@@ -1,0 +1,5 @@
+extends PanelContainer
+
+
+func _ready() -> void:
+	get_tree().create_timer(0.5).timeout.connect(TickSystem.Start)

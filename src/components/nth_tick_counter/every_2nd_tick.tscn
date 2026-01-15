@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://hgnm4614rfly"]
+
+[ext_resource type="Script" uid="uid://cniksps1fom2o" path="res://src/components/nth_tick_counter/NthTickCounter.gd" id="1_8bte4"]
+[ext_resource type="LabelSettings" uid="uid://xms7g6t7d5w7" path="res://styles/label_body_20px.tres" id="1_smrfq"]
+
+[node name="Every2NdTick" type="VBoxContainer"]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Every 2nd Tick"
+label_settings = ExtResource("1_smrfq")
+horizontal_alignment = 1
+
+[node name="TickCount" type="Label" parent="."]
+layout_mode = 2
+label_settings = ExtResource("1_smrfq")
+horizontal_alignment = 1
+script = ExtResource("1_8bte4")
+_nthTick = 2

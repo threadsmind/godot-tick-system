@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxgq7wru8hn1r"]
+
+[ext_resource type="LabelSettings" uid="uid://xms7g6t7d5w7" path="res://styles/label_body_20px.tres" id="1_3r8pw"]
+[ext_resource type="Script" uid="uid://bnxu2t72grk55" path="res://src/components/tick_info/TpsDisplay.gd" id="1_n0qjt"]
+[ext_resource type="Script" uid="uid://p6nmrxe82gai" path="res://src/components/tick_info/PhysicsTpsDisplay.gd" id="3_vec0g"]
+
+[node name="TickInfo" type="VBoxContainer"]
+
+[node name="TpsDisplay" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TpsDisplay"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "TPS:"
+label_settings = ExtResource("1_3r8pw")
+
+[node name="TpsValue" type="Label" parent="TpsDisplay"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("1_3r8pw")
+horizontal_alignment = 2
+script = ExtResource("1_n0qjt")
+
+[node name="PhysicsTpsDisplay" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PhysicsTpsDisplay"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "Physics TPS:"
+label_settings = ExtResource("1_3r8pw")
+
+[node name="PhysicsTpsValue" type="Label" parent="PhysicsTpsDisplay"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("1_3r8pw")
+horizontal_alignment = 2
+script = ExtResource("3_vec0g")

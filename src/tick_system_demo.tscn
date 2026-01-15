@@ -1,0 +1,113 @@
+[gd_scene load_steps=13 format=3 uid="uid://cxr2g0j07sjhf"]
+
+[ext_resource type="LabelSettings" uid="uid://18nq6dd76a44" path="res://styles/label_body_24px.tres" id="1_nido4"]
+[ext_resource type="Script" uid="uid://ojoqw0jyya53" path="res://src/TickSystemDemo.gd" id="1_r2bka"]
+[ext_resource type="Script" uid="uid://bv7nh0vw1403q" path="res://util/CloseAppButton.gd" id="2_5m710"]
+[ext_resource type="PackedScene" uid="uid://ccfjrj4itbylr" path="res://src/components/tick_counter/tick_counter.tscn" id="3_5m710"]
+[ext_resource type="PackedScene" uid="uid://dviwdexarh473" path="res://util/flow_box/flow_box.tscn" id="5_f80al"]
+[ext_resource type="PackedScene" uid="uid://hgnm4614rfly" path="res://src/components/nth_tick_counter/every_2nd_tick.tscn" id="6_qecvg"]
+[ext_resource type="PackedScene" uid="uid://bj0o5lbkwp18t" path="res://src/components/nth_tick_counter/every_10th_tick.tscn" id="7_fdgrw"]
+[ext_resource type="PackedScene" uid="uid://biyq8kar6jvab" path="res://src/components/stop_start_reset/tick_stop_start_reset.tscn" id="8_eyt0m"]
+[ext_resource type="PackedScene" uid="uid://cj6630ldr8yi7" path="res://src/components/tps_setter/tps_setter.tscn" id="9_qbp7n"]
+[ext_resource type="PackedScene" uid="uid://bxgq7wru8hn1r" path="res://src/components/tick_info/tick_info.tscn" id="10_2gbsl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qecvg"]
+bg_color = Color(0.6793051, 0.6964356, 0.7312678, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f80al"]
+bg_color = Color(0.14391339, 0.15920958, 0.18822435, 1)
+shadow_color = Color(0, 0, 0, 0.29411766)
+shadow_size = 3
+
+[node name="TickSystemDemo" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qecvg")
+script = ExtResource("1_r2bka")
+metadata/_custom_type_script = "uid://ojoqw0jyya53"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Header" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f80al")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Header"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Header/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+
+[node name="Title" type="Label" parent="VBoxContainer/Header/HBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Tick System Demo"
+label_settings = ExtResource("1_nido4")
+
+[node name="CloseAppButton" type="Button" parent="VBoxContainer/Header/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "  X  "
+script = ExtResource("2_5m710")
+metadata/_custom_type_script = "uid://bv7nh0vw1403q"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HFlowContainer" type="HFlowContainer" parent="VBoxContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+
+[node name="FlowBox" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" instance=ExtResource("5_f80al")]
+layout_mode = 2
+
+[node name="TickStopStartReset" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox" instance=ExtResource("8_eyt0m")]
+layout_mode = 2
+
+[node name="FlowBox2" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" instance=ExtResource("5_f80al")]
+layout_mode = 2
+
+[node name="TpsSetter" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox2" instance=ExtResource("9_qbp7n")]
+layout_mode = 2
+
+[node name="FlowBox3" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" instance=ExtResource("5_f80al")]
+layout_mode = 2
+
+[node name="TickInfo" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox3" instance=ExtResource("10_2gbsl")]
+layout_mode = 2
+
+[node name="FlowBox4" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" instance=ExtResource("5_f80al")]
+layout_mode = 2
+
+[node name="TickCounter" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox4" instance=ExtResource("3_5m710")]
+layout_mode = 2
+
+[node name="FlowBox5" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" instance=ExtResource("5_f80al")]
+layout_mode = 2
+
+[node name="Every2NdTick" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox5" instance=ExtResource("6_qecvg")]
+layout_mode = 2
+
+[node name="FlowBox6" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" instance=ExtResource("5_f80al")]
+layout_mode = 2
+
+[node name="Every10ThTick" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox6" instance=ExtResource("7_fdgrw")]
+layout_mode = 2

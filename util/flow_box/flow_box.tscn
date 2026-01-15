@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dviwdexarh473"]
+
+[ext_resource type="StyleBox" uid="uid://cahs068y6s46w" path="res://styles/flow_box.tres" id="1_tkojx"]
+[ext_resource type="Script" uid="uid://k8uf7788so6a" path="res://util/flow_box/FlowBox.gd" id="2_er3pe"]
+
+[node name="FlowBox" type="PanelContainer"]
+custom_minimum_size = Vector2(200, 200)
+offset_right = 200.0
+offset_bottom = 200.0
+theme_override_styles/panel = ExtResource("1_tkojx")
+script = ExtResource("2_er3pe")
+metadata/_custom_type_script = "uid://k8uf7788so6a"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
