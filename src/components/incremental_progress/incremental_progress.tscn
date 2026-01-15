@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://cumw5gnjg5pdv"]
+
+[ext_resource type="Script" uid="uid://3ep5x7td725r" path="res://src/components/incremental_progress/IncrementalProgress.gd" id="1_dfevn"]
+[ext_resource type="LabelSettings" uid="uid://xms7g6t7d5w7" path="res://styles/label_body_20px.tres" id="2_2n6w3"]
+
+[node name="IncrementalProgress" type="VBoxContainer" node_paths=PackedStringArray("_progressBar", "_pointsDisplay", "_pointsValue")]
+script = ExtResource("1_dfevn")
+_progressBar = NodePath("PanelContainer/ProgressBar")
+_pointsDisplay = NodePath("PanelContainer/PointsDisplay")
+_pointsValue = NodePath("PanelContainer/PointsDisplay/PointsValue")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 2
+text = "Incremental Progress"
+label_settings = ExtResource("2_2n6w3")
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+max_value = 120.0
+step = 1.0
+rounded = true
+show_percentage = false
+
+[node name="PointsDisplay" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/PointsDisplay"]
+layout_mode = 2
+text = "Cookies:"
+label_settings = ExtResource("2_2n6w3")
+
+[node name="PointsValue" type="Label" parent="PanelContainer/PointsDisplay"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("2_2n6w3")
