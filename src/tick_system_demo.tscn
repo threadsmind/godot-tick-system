@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cxr2g0j07sjhf"]
+[gd_scene format=3 uid="uid://cxr2g0j07sjhf"]
 
 [ext_resource type="LabelSettings" uid="uid://18nq6dd76a44" path="res://styles/label_body_24px.tres" id="1_nido4"]
 [ext_resource type="Script" uid="uid://ojoqw0jyya53" path="res://src/TickSystemDemo.gd" id="1_r2bka"]
@@ -24,7 +24,7 @@ bg_color = Color(0.14391339, 0.15920958, 0.18822435, 1)
 shadow_color = Color(0, 0, 0, 0.29411766)
 shadow_size = 3
 
-[node name="TickSystemDemo" type="PanelContainer"]
+[node name="TickSystemDemo" type="PanelContainer" unique_id=828191013]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -34,40 +34,40 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_qecvg")
 script = ExtResource("1_r2bka")
 metadata/_custom_type_script = "uid://ojoqw0jyya53"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1366144914]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Header" type="PanelContainer" parent="VBoxContainer"]
+[node name="Header" type="PanelContainer" parent="VBoxContainer" unique_id=1009226870]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_f80al")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Header"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Header" unique_id=917565577]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Header/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Header/HBoxContainer" unique_id=543483788]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 8
 
-[node name="Title" type="Label" parent="VBoxContainer/Header/HBoxContainer/MarginContainer"]
+[node name="Title" type="Label" parent="VBoxContainer/Header/HBoxContainer/MarginContainer" unique_id=2120116432]
 layout_mode = 2
 text = "Tick System Demo"
 label_settings = ExtResource("1_nido4")
 
-[node name="CloseAppButton" type="Button" parent="VBoxContainer/Header/HBoxContainer"]
+[node name="CloseAppButton" type="Button" parent="VBoxContainer/Header/HBoxContainer" unique_id=2143615375]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "  X  "
 script = ExtResource("2_5m710")
 metadata/_custom_type_script = "uid://bv7nh0vw1403q"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=712954299]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ScrollContainer" unique_id=722975935]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -76,73 +76,73 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="HFlowContainer" type="HFlowContainer" parent="VBoxContainer/ScrollContainer/MarginContainer"]
+[node name="HFlowContainer" type="HFlowContainer" parent="VBoxContainer/ScrollContainer/MarginContainer" unique_id=2093849402]
 layout_mode = 2
 theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 
-[node name="FlowBox" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" instance=ExtResource("5_f80al")]
+[node name="FlowBox" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" unique_id=188609127 instance=ExtResource("5_f80al")]
 layout_mode = 2
 
-[node name="TickStopStartReset" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox" instance=ExtResource("8_eyt0m")]
+[node name="TickStopStartReset" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox" unique_id=1070674333 instance=ExtResource("8_eyt0m")]
 layout_mode = 2
 
-[node name="FlowBox2" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" instance=ExtResource("5_f80al")]
+[node name="FlowBox2" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" unique_id=898174730 instance=ExtResource("5_f80al")]
 layout_mode = 2
 
-[node name="TpsSetter" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox2" instance=ExtResource("9_qbp7n")]
+[node name="TpsSetter" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox2" unique_id=531025952 instance=ExtResource("9_qbp7n")]
 layout_mode = 2
 
-[node name="FlowBox3" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" instance=ExtResource("5_f80al")]
+[node name="FlowBox3" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" unique_id=1444512288 instance=ExtResource("5_f80al")]
 layout_mode = 2
 
-[node name="TickInfo" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox3" instance=ExtResource("10_2gbsl")]
+[node name="TickInfo" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox3" unique_id=967080344 instance=ExtResource("10_2gbsl")]
 layout_mode = 2
 
-[node name="FlowBox4" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" instance=ExtResource("5_f80al")]
+[node name="FlowBox4" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" unique_id=736174773 instance=ExtResource("5_f80al")]
 layout_mode = 2
 
-[node name="TickCounter" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox4" instance=ExtResource("3_5m710")]
+[node name="TickCounter" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox4" unique_id=1035351096 instance=ExtResource("3_5m710")]
 layout_mode = 2
 
-[node name="FlowBox5" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" instance=ExtResource("5_f80al")]
+[node name="FlowBox5" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" unique_id=339721554 instance=ExtResource("5_f80al")]
 layout_mode = 2
 
-[node name="Every2NdTick" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox5" instance=ExtResource("6_qecvg")]
+[node name="Every2NdTick" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox5" unique_id=2054524124 instance=ExtResource("6_qecvg")]
 layout_mode = 2
 
-[node name="FlowBox6" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" instance=ExtResource("5_f80al")]
+[node name="FlowBox6" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" unique_id=1480309085 instance=ExtResource("5_f80al")]
 layout_mode = 2
 
-[node name="Every10ThTick" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox6" instance=ExtResource("7_fdgrw")]
+[node name="Every10ThTick" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox6" unique_id=552049514 instance=ExtResource("7_fdgrw")]
 layout_mode = 2
 
-[node name="FlowBox7" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" instance=ExtResource("5_f80al")]
+[node name="FlowBox7" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" unique_id=1248791470 instance=ExtResource("5_f80al")]
 layout_mode = 2
 
-[node name="IncrementalProgress" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox7" instance=ExtResource("12_5pu1q")]
+[node name="IncrementalProgress" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox7" unique_id=752973280 instance=ExtResource("12_5pu1q")]
 layout_mode = 2
 
-[node name="FlowBox8" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" instance=ExtResource("5_f80al")]
+[node name="FlowBox8" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" unique_id=1355525178 instance=ExtResource("5_f80al")]
 layout_mode = 2
 
-[node name="DamageOverTime" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox8" instance=ExtResource("13_qttwm")]
+[node name="DamageOverTime" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox8" unique_id=1583458418 instance=ExtResource("13_qttwm")]
 layout_mode = 2
 
-[node name="FlowBox9" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" instance=ExtResource("5_f80al")]
+[node name="FlowBox9" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" unique_id=1851832647 instance=ExtResource("5_f80al")]
 layout_mode = 2
 
-[node name="Pipes" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox9" instance=ExtResource("15_eusmq")]
+[node name="Pipes" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox9" unique_id=1703182567 instance=ExtResource("15_eusmq")]
 layout_mode = 2
 
-[node name="FlowBox10" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" instance=ExtResource("5_f80al")]
+[node name="FlowBox10" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" unique_id=1340826486 instance=ExtResource("5_f80al")]
 layout_mode = 2
 
-[node name="ActionDelay" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox10" instance=ExtResource("14_b7efr")]
+[node name="ActionDelay" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox10" unique_id=1433588919 instance=ExtResource("14_b7efr")]
 layout_mode = 2
 
-[node name="FlowBox11" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" instance=ExtResource("5_f80al")]
+[node name="FlowBox11" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer" unique_id=209325155 instance=ExtResource("5_f80al")]
 layout_mode = 2
 
-[node name="RandomTicks" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox11" instance=ExtResource("11_thujj")]
+[node name="RandomTicks" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/FlowBox11" unique_id=568221833 instance=ExtResource("11_thujj")]
 layout_mode = 2

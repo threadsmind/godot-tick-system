@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d33ktgpenp5s3"]
+[gd_scene format=3 uid="uid://d33ktgpenp5s3"]
 
 [ext_resource type="LabelSettings" uid="uid://xms7g6t7d5w7" path="res://styles/label_body_20px.tres" id="1_g0sjp"]
 [ext_resource type="Script" uid="uid://cxytglwymc1uc" path="res://src/components/pipes/Pipes.gd" id="1_lm3w5"]
@@ -49,15 +49,15 @@ border_color = Color(0.627451, 0.57254905, 0.12941177, 1)
 border_blend = true
 expand_margin_right = 3.0
 
-[node name="Pipes" type="VBoxContainer"]
+[node name="Pipes" type="VBoxContainer" unique_id=1839808241]
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=2077294690]
 layout_mode = 2
 text = "Item Pipes"
 label_settings = ExtResource("1_g0sjp")
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." node_paths=PackedStringArray("_inventoryDisplayA", "_inventoryDisplayB", "_pipeDisplay")]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1877151659 node_paths=PackedStringArray("_inventoryDisplayA", "_inventoryDisplayB", "_pipeDisplay")]
 layout_mode = 2
 theme_override_constants/separation = 0
 script = ExtResource("1_lm3w5")
@@ -65,10 +65,10 @@ _inventoryDisplayA = NodePath("InventoryDisplay")
 _inventoryDisplayB = NodePath("InventoryDisplay2")
 _pipeDisplay = NodePath("PipeDisplay")
 
-[node name="InventoryDisplay" parent="HBoxContainer" instance=ExtResource("3_g0sjp")]
+[node name="InventoryDisplay" parent="HBoxContainer" unique_id=1623960842 instance=ExtResource("3_g0sjp")]
 layout_mode = 2
 
-[node name="PipeDisplay" type="PanelContainer" parent="HBoxContainer" node_paths=PackedStringArray("_leftInputDisplay", "_rightInputDisplay", "_ltrButton")]
+[node name="PipeDisplay" type="PanelContainer" parent="HBoxContainer" unique_id=890220911 node_paths=PackedStringArray("_leftInputDisplay", "_rightInputDisplay", "_ltrButton")]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_g0sjp")
@@ -77,52 +77,52 @@ _leftInputDisplay = NodePath("HBoxContainer/PipeInput")
 _rightInputDisplay = NodePath("HBoxContainer/PipeInput2")
 _ltrButton = NodePath("Button")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PipeDisplay"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PipeDisplay" unique_id=944665957]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="PipeInput" type="PanelContainer" parent="HBoxContainer/PipeDisplay/HBoxContainer"]
+[node name="PipeInput" type="PanelContainer" parent="HBoxContainer/PipeDisplay/HBoxContainer" unique_id=227934810]
 custom_minimum_size = Vector2(14, 50)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_g0sjp")
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/PipeDisplay/HBoxContainer/PipeInput"]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/PipeDisplay/HBoxContainer/PipeInput" unique_id=1249516451]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_l5ro1")
 
-[node name="PipeSegment" type="PanelContainer" parent="HBoxContainer/PipeDisplay/HBoxContainer"]
+[node name="PipeSegment" type="PanelContainer" parent="HBoxContainer/PipeDisplay/HBoxContainer" unique_id=1981636084]
 custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_b1ebe")
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/PipeDisplay/HBoxContainer/PipeSegment"]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/PipeDisplay/HBoxContainer/PipeSegment" unique_id=877081752]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_2l08k")
 
-[node name="PipeInput2" type="PanelContainer" parent="HBoxContainer/PipeDisplay/HBoxContainer"]
+[node name="PipeInput2" type="PanelContainer" parent="HBoxContainer/PipeDisplay/HBoxContainer" unique_id=1364408566]
 custom_minimum_size = Vector2(14, 50)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_m5xx0")
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/PipeDisplay/HBoxContainer/PipeInput2"]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/PipeDisplay/HBoxContainer/PipeInput2" unique_id=1909867782]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_cuwl8")
 
-[node name="Button" type="Button" parent="HBoxContainer/PipeDisplay"]
+[node name="Button" type="Button" parent="HBoxContainer/PipeDisplay" unique_id=202575893]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 30
 text = ">"
 
-[node name="InventoryDisplay2" parent="HBoxContainer" instance=ExtResource("3_g0sjp")]
+[node name="InventoryDisplay2" parent="HBoxContainer" unique_id=1415316634 instance=ExtResource("3_g0sjp")]
 layout_mode = 2

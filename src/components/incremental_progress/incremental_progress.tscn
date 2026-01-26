@@ -1,24 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://cumw5gnjg5pdv"]
+[gd_scene format=3 uid="uid://cumw5gnjg5pdv"]
 
 [ext_resource type="Script" uid="uid://3ep5x7td725r" path="res://src/components/incremental_progress/IncrementalProgress.gd" id="1_dfevn"]
 [ext_resource type="LabelSettings" uid="uid://xms7g6t7d5w7" path="res://styles/label_body_20px.tres" id="2_2n6w3"]
 
-[node name="IncrementalProgress" type="VBoxContainer" node_paths=PackedStringArray("_progressBar", "_pointsDisplay", "_pointsValue")]
+[node name="IncrementalProgress" type="VBoxContainer" unique_id=1717183202 node_paths=PackedStringArray("_progressBar", "_pointsDisplay", "_pointsValue")]
 script = ExtResource("1_dfevn")
 _progressBar = NodePath("PanelContainer/ProgressBar")
 _pointsDisplay = NodePath("PanelContainer/PointsDisplay")
 _pointsValue = NodePath("PanelContainer/PointsDisplay/PointsValue")
 
-[node name="Title" type="Label" parent="."]
+[node name="Title" type="Label" parent="." unique_id=1437409851]
 layout_mode = 2
 text = "Incremental Progress"
 label_settings = ExtResource("2_2n6w3")
 horizontal_alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=88548055]
 layout_mode = 2
 
-[node name="ProgressBar" type="ProgressBar" parent="PanelContainer"]
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer" unique_id=1114051298]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 max_value = 120.0
@@ -26,16 +26,16 @@ step = 1.0
 rounded = true
 show_percentage = false
 
-[node name="PointsDisplay" type="HBoxContainer" parent="PanelContainer"]
+[node name="PointsDisplay" type="HBoxContainer" parent="PanelContainer" unique_id=1108636075]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="PanelContainer/PointsDisplay"]
+[node name="Label" type="Label" parent="PanelContainer/PointsDisplay" unique_id=1151363616]
 layout_mode = 2
 text = "Cookies:"
 label_settings = ExtResource("2_2n6w3")
 
-[node name="PointsValue" type="Label" parent="PanelContainer/PointsDisplay"]
+[node name="PointsValue" type="Label" parent="PanelContainer/PointsDisplay" unique_id=443749261]
 layout_mode = 2
 text = "0"
 label_settings = ExtResource("2_2n6w3")

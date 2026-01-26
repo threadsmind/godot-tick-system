@@ -1,25 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqff624r1ybya"]
+[gd_scene format=3 uid="uid://bqff624r1ybya"]
 
 [ext_resource type="Script" uid="uid://vjh31wc70xwv" path="res://src/components/action_delay/ActionDelay.gd" id="1_ogcdh"]
 [ext_resource type="LabelSettings" uid="uid://xms7g6t7d5w7" path="res://styles/label_body_20px.tres" id="1_xlulo"]
 
-[node name="ActionDelay" type="VBoxContainer" node_paths=PackedStringArray("_button", "_label")]
+[node name="ActionDelay" type="VBoxContainer" unique_id=1033704187 node_paths=PackedStringArray("_button", "_label")]
 script = ExtResource("1_ogcdh")
 _button = NodePath("Button")
 _label = NodePath("Pong")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1278790575]
 layout_mode = 2
 text = "Action Delay"
 label_settings = ExtResource("1_xlulo")
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=983673503]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "PING!"
 
-[node name="Pong" type="Label" parent="."]
+[node name="Pong" type="Label" parent="." unique_id=419665892]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 text = "PONG!"

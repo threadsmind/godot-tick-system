@@ -1,26 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://biyq8kar6jvab"]
+[gd_scene format=3 uid="uid://biyq8kar6jvab"]
 
 [ext_resource type="Script" uid="uid://drp6rglr2oem7" path="res://src/components/stop_start_reset/StartTicking.gd" id="1_eeqy2"]
 [ext_resource type="Script" uid="uid://dkjtyny6i7dy3" path="res://src/components/stop_start_reset/StopTicking.gd" id="2_802i3"]
 [ext_resource type="Script" uid="uid://dym5o6y7xngu8" path="res://src/components/stop_start_reset/ResetTicking.gd" id="3_vvvms"]
 
-[node name="TickStopStartReset" type="VBoxContainer"]
+[node name="TickStopStartReset" type="VBoxContainer" unique_id=1424143082]
 
-[node name="Start" type="Button" parent="."]
+[node name="Start" type="Button" parent="." unique_id=471241153]
 custom_minimum_size = Vector2(120, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Start"
 script = ExtResource("1_eeqy2")
 
-[node name="Stop" type="Button" parent="."]
+[node name="Stop" type="Button" parent="." unique_id=1768817728]
 custom_minimum_size = Vector2(120, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Stop"
 script = ExtResource("2_802i3")
 
-[node name="Reset" type="Button" parent="."]
+[node name="Reset" type="Button" parent="." unique_id=145686406]
 custom_minimum_size = Vector2(120, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20

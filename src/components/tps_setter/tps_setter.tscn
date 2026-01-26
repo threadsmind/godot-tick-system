@@ -1,18 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cj6630ldr8yi7"]
+[gd_scene format=3 uid="uid://cj6630ldr8yi7"]
 
 [ext_resource type="Script" uid="uid://dq4jxfuyrc7i7" path="res://src/components/tps_setter/TpsSetter.gd" id="1_l6wx4"]
 [ext_resource type="LabelSettings" uid="uid://xms7g6t7d5w7" path="res://styles/label_body_20px.tres" id="1_wv8lo"]
 
-[node name="TpsSetter" type="VBoxContainer"]
+[node name="TpsSetter" type="VBoxContainer" unique_id=1600249448]
 offset_right = 176.0
 offset_bottom = 73.0
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1737578824]
 layout_mode = 2
 text = "Target TPS"
 label_settings = ExtResource("1_wv8lo")
 
-[node name="TpsValue" type="TextEdit" parent="."]
+[node name="TpsValue" type="TextEdit" parent="." unique_id=2052905201]
 custom_minimum_size = Vector2(54, 41)
 layout_mode = 2
 size_flags_horizontal = 4
