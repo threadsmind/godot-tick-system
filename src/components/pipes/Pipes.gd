@@ -61,7 +61,7 @@ class Inventory:
 	func _init(_count: int) -> void:
 		itemCount = _count
 	
-	func ModifyItemCount(delta) -> int:
+	func ModifyItemCount(delta: int) -> int:
 		itemCount = maxi(itemCount + delta, 0)
 		return itemCount
 
